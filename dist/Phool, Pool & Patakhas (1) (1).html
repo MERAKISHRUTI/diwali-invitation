@@ -1,0 +1,895 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Phool, Pool & Patakhas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap">
+<style>
+/* Layout: one phone-width column. Hero: shayari, centred PHOOL POOL PATakhas headline, dancing friends,
+   marigolds and diyas. Then a small tap-to-deal card stack with illustrated faces, fines list, one RSVP form, a pass. */
+:root{
+  --maroon-950:#240310;
+  --maroon-900:#3a0614;
+  --maroon-800:#520a1c;
+  --maroon-700:#6e1127;
+  --gold-300:#f6dc9a;
+  --gold-500:#e9b948;
+  --gold-700:#8a5d12;
+  --cream:#fcefd2;
+  --ink:#3a0a14;
+  --muted:#e6cd9f;
+  --line:rgba(233,185,72,.38);
+  --font:'Merienda','Segoe UI',Roboto,sans-serif;
+  color-scheme:dark;
+}
+html{-webkit-text-size-adjust:100%}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background-color:var(--maroon-900);
+  background-image:
+    radial-gradient(120% 55% at 50% 0%,rgba(233,185,72,.20),transparent 62%),
+    radial-gradient(circle at 1px 1px,rgba(233,185,72,.11) 1px,transparent 0);
+  background-size:auto,22px 22px;
+  color:var(--cream);
+  font-family:var(--font);
+  font-size:15px;
+  line-height:1.55;
+  padding-block:0 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.wrap{max-width:520px;margin:0 auto}
+h1,h2,h3,p{margin:0}
+h2{font-size:22px;line-height:1.3;color:var(--gold-300);text-wrap:balance;margin-top:4px}
+section{padding-top:40px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-500);font-weight:700}
+.lede{color:var(--muted);margin-top:8px;font-size:14.5px}
+a{color:var(--gold-300)}
+:focus-visible{outline:2px solid var(--gold-300);outline-offset:2px}
+
+/* Hero */
+.hero{position:relative;text-align:center;padding:10px 0 6px;overflow:hidden}
+#fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero>*:not(canvas){position:relative;z-index:1}
+.garland{display:block;width:100%;height:auto}
+.hero .eyebrow{display:block;margin-top:2px}
+.shayari{margin:12px auto 0;max-width:420px;padding:10px 14px;border:1px dashed var(--line);border-radius:14px;background:rgba(0,0,0,.24);color:var(--cream);font-size:14px;line-height:1.6;text-wrap:balance}
+h1{margin-top:18px;text-align:center}
+.iss{display:block;font-size:20px;color:var(--cream);font-weight:400}
+.big-words{
+  display:block;margin-top:2px;
+  font-size:clamp(38px,12.4vw,66px);
+  line-height:1.12;
+  font-weight:900;
+  color:var(--gold-300);
+  text-shadow:0 0 22px rgba(233,185,72,.5),0 3px 0 var(--maroon-950);
+  overflow-wrap:anywhere;
+}
+.big-words span{display:block}
+.manao{display:block;font-size:22px;color:var(--cream);margin-top:4px}
+.when{margin-top:16px;display:inline-block;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:14px;background:rgba(0,0,0,.22);color:var(--gold-300)}
+.strip{display:block;width:100%;height:auto;margin-top:14px;overflow:visible}
+.dnc{transform-box:fill-box;transform-origin:50% 100%;animation:bob .8s ease-in-out infinite alternate;animation-delay:var(--d,0s)}
+@keyframes bob{from{transform:translateY(0) rotate(-1.5deg)}to{transform:translateY(-4px) rotate(1.5deg)}}
+.lamps{display:flex;justify-content:space-between;align-items:flex-end;margin-top:4px;padding:0 2px}
+.lamp{flex:0 0 var(--w)}
+.fi{flex:0 0 8%;display:block;height:auto;margin-bottom:4px}
+
+/* Diya */
+.diya{display:block;width:100%;height:auto;overflow:visible}
+.glow{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-in-out infinite alternate;animation-delay:var(--d,0s)}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick 1.3s ease-in-out infinite alternate;animation-delay:var(--d,0s)}
+.still .glow,.still .flame{animation:none}
+.diya.sm .glow{display:none}
+@keyframes pulse{from{opacity:.55;transform:scale(.96)}to{opacity:1;transform:scale(1.1)}}
+@keyframes flick{0%{transform:scale(1,1) rotate(-1.5deg)}50%{transform:scale(.93,1.07) rotate(1.2deg)}100%{transform:scale(1.04,.96) rotate(-.6deg)}}
+
+/* Countdown */
+.count-head{font-size:13px;color:var(--muted);text-align:center;margin-bottom:10px}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.unit{border:1px solid var(--line);border-radius:12px;padding:10px 4px 8px;text-align:center;background:rgba(0,0,0,.22)}
+.unit b{display:block;font-size:28px;line-height:1.1;font-weight:900;color:var(--gold-500);font-variant-numeric:tabular-nums}
+.unit span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.live{text-align:center;font-weight:900;font-size:20px;color:var(--gold-300);padding:14px 0}
+#countWrap{padding-top:26px}
+
+/* Card stack: tap the top card, it flies off, the next one flips up */
+.stack{position:relative;width:min(250px,70vw);aspect-ratio:5/7.3;margin:24px auto 30px}
+.card{
+  position:absolute;inset:0;z-index:var(--z,1);display:grid;perspective:900px;
+  border:0;padding:0;margin:0;background:none;font:inherit;color:inherit;text-align:inherit;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transform:translateY(var(--ty,0px)) rotate(var(--r,0deg));
+  transition:transform .55s cubic-bezier(.3,.7,.2,1),opacity .45s;
+  pointer-events:none;
+}
+.card.top{pointer-events:auto}
+.card.gone{transform:translate(var(--gx,120%),-6%) rotate(var(--gr,20deg));opacity:0;pointer-events:none}
+.inner{display:grid;position:relative;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,.7,.2,1);height:100%}
+.card.is-back .inner{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;position:relative;overflow:hidden;box-shadow:0 10px 22px rgba(0,0,0,.45)}
+.front{display:grid;grid-template-rows:minmax(0,1fr) auto;background:var(--cream);color:var(--ink);border:2px solid var(--gold-500)}
+.art{width:100%;height:100%;display:block;min-height:0}
+.rank{position:absolute;left:8px;top:8px;z-index:2;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--cream);color:var(--maroon-700);font-weight:900;font-size:15px;border:1px solid var(--gold-500)}
+.info{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;padding:9px 12px 12px;background:var(--cream);min-width:0}
+.info .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-700);font-weight:700}
+.info .big{font-size:clamp(16px,5vw,20px);font-weight:900;line-height:1.2;color:var(--maroon-700);overflow-wrap:anywhere}
+.info .txt{font-size:12.5px;line-height:1.45;overflow-wrap:anywhere}
+.back{
+  transform:rotateY(180deg);
+  background-color:var(--maroon-800);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='%23e9b948' fill-opacity='.5'%3E%3Cpath d='M16 5c4 5 5 9 0 13-5-4-4-8 0-13z'/%3E%3Cpath d='M6 21q10-3 20 0q-2 10-10 11q-8-1-10-11z'/%3E%3Cpath d='M48 37c4 5 5 9 0 13-5-4-4-8 0-13z'/%3E%3Cpath d='M38 53q10-3 20 0q-2 9-10 10q-8-1-10-10z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:64px 64px;
+  border:2px solid var(--gold-500);
+  display:grid;place-items:center;
+}
+.back::after{content:"";position:absolute;inset:7px;border:1px solid var(--line);border-radius:10px;pointer-events:none}
+.roundel{width:62%;aspect-ratio:1;border-radius:50%;background:var(--maroon-900);border:2px solid var(--gold-500);display:grid;place-items:center;z-index:1}
+.roundel .diya{width:68%}
+.hint{font-size:13px;color:var(--muted);margin-top:-6px;text-align:center}
+.maplink{display:flex;justify-content:center;align-items:center;margin-top:16px;padding:13px 16px;border:1px solid var(--gold-500);border-radius:14px;text-decoration:none;font-weight:700;color:var(--gold-300);background:rgba(0,0,0,.2);text-align:center}
+
+/* Fines */
+.fines{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.fine{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 12px;align-items:center;padding:12px 14px 12px 12px;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.22)}
+.amt{grid-row:1/span 2;min-width:78px;padding:9px 8px;border-radius:12px;text-align:center;font-weight:900;font-size:15px;line-height:1.2;color:var(--maroon-950);background:linear-gradient(180deg,var(--gold-300),var(--gold-500))}
+.amt.out{background:#c0261b;color:#fff}
+.fine b{color:var(--gold-300);font-size:14.5px;line-height:1.35}
+.fine span{color:var(--muted);font-size:13px;line-height:1.4}
+
+/* Form */
+form{margin-top:18px}
+label.fl,.fl{display:block;font-weight:700;color:var(--gold-300);margin:26px 0 8px;font-size:16px}
+.fl small{font-weight:400;color:var(--muted);font-size:13px}
+input[type=text]{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.28);color:var(--cream);font:inherit;font-size:16px}
+input[type=text]::placeholder{color:rgba(230,205,159,.6)}
+.sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-500);margin:14px 0 8px;font-weight:700}
+.group{display:grid;gap:8px}
+.opt{position:relative;display:block;cursor:pointer}
+.opt input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.opt .box{display:block;border:1px solid var(--line);border-radius:12px;padding:11px 14px;background:rgba(0,0,0,.18);line-height:1.45;transition:background .15s,border-color .15s}
+.opt input:checked+.box{border-color:var(--gold-500);background:rgba(233,185,72,.18);box-shadow:0 0 0 1px var(--gold-500) inset}
+.opt input:focus-visible+.box{outline:2px solid var(--gold-300);outline-offset:2px}
+.opt .box b{display:block;color:var(--gold-300);font-size:15px}
+.opt .box small{display:block;color:var(--muted);font-size:13px;line-height:1.4;margin-top:2px}
+.two{grid-template-columns:1fr 1fr}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips .box{border-radius:14px;padding:8px 12px;font-size:13.5px;line-height:1.35}
+.q{margin-top:22px}
+.q h3{font-size:15px;font-weight:700;color:var(--gold-300);line-height:1.4;margin-bottom:10px}
+.nojobs{margin-top:26px;padding:14px;border:1px dashed var(--line);border-radius:12px;color:var(--muted)}
+.title-box{margin-top:30px;padding:16px 14px;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.2)}
+.title-box h3{font-size:18px;color:var(--gold-300);line-height:1.35}
+.title-box p{margin-top:8px;color:var(--cream);font-size:14.5px}
+.decl{margin-top:30px;padding:16px;border-radius:14px;background:var(--cream);color:var(--ink);border:2px solid var(--gold-500)}
+.decl b.dt{display:block;font-size:14px;letter-spacing:.06em;margin-bottom:6px;color:var(--maroon-700)}
+.decl p{font-size:13.5px;line-height:1.55}
+.sigrow{display:flex;align-items:baseline;gap:8px;margin-top:14px}
+.sl{font-weight:700;font-size:14px;color:var(--maroon-700);flex:0 0 auto}
+.sv{flex:1;min-width:0;border-bottom:1.5px solid var(--ink);min-height:24px;font-weight:700;overflow-wrap:anywhere;color:var(--maroon-700)}
+.decl input.sigin{flex:1;min-width:0;width:auto;background:transparent;border:0;border-bottom:1.5px solid var(--ink);border-radius:0;padding:2px 0;color:var(--maroon-700);font-size:18px}
+.decl input.sigin::placeholder{color:rgba(58,10,20,.45)}
+.btn{display:flex;justify-content:center;align-items:center;width:100%;margin-top:16px;padding:15px 18px;border-radius:14px;border:0;font:inherit;font-weight:900;font-size:16px;text-decoration:none;cursor:pointer;color:var(--maroon-950);background:linear-gradient(180deg,var(--gold-300),var(--gold-500));text-align:center}
+.btn[aria-disabled="true"]{background:rgba(233,185,72,.16);color:var(--muted);cursor:not-allowed;border:1px dashed var(--line)}
+.btn.ghost{background:transparent;color:var(--gold-300);border:1px solid var(--gold-500);margin-top:10px}
+.note{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
+
+/* Screenshot pass */
+.pass{position:relative;margin-top:16px;padding:26px 18px 22px;border:2px solid var(--gold-500);border-radius:20px;text-align:center;background:linear-gradient(160deg,var(--maroon-700),var(--maroon-900) 70%);overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.45)}
+.pass::after{content:"";position:absolute;inset:8px;border:1px solid var(--line);border-radius:14px;pointer-events:none}
+.pass .lampTop{width:84px;margin:10px auto 6px}
+.pname{font-size:clamp(26px,8vw,34px);font-weight:900;line-height:1.2;color:var(--gold-300);overflow-wrap:anywhere;margin-top:6px}
+.prole{display:inline-block;margin-top:12px;padding:8px 14px;border-radius:14px;background:var(--cream);color:var(--ink);font-weight:700;font-size:15px;line-height:1.4;max-width:100%}
+.prole small{display:block;font-weight:400;font-size:12.5px}
+.pvibe{margin-top:14px;font-size:13.5px;color:var(--muted);padding:0 6px}
+.pextra{margin-top:8px;font-size:13px;color:var(--gold-300);font-weight:700;overflow-wrap:anywhere}
+.pmeta{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--cream)}
+.cp{width:100%;margin-top:14px;padding:12px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.28);color:var(--cream);font:inherit;font-size:13px;resize:none}
+footer{margin-top:44px;text-align:center;color:var(--muted);font-size:13.5px}
+footer b{display:block;color:var(--gold-300);font-size:15px;margin-bottom:4px}
+
+@media (min-width:560px){.roles{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <radialGradient id="g-glow"><stop offset="0" stop-color="#ffb347" stop-opacity=".6"/><stop offset="1" stop-color="#ff8a1f" stop-opacity="0"/></radialGradient>
+  <linearGradient id="g-flame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a8"/><stop offset="1" stop-color="#ff8f26"/></linearGradient>
+  <linearGradient id="g-bowl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8e0a0"/><stop offset="1" stop-color="#b07a1e"/></linearGradient>
+  <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0210"/><stop offset="1" stop-color="#6e1127"/></linearGradient>
+  <linearGradient id="poolG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14a3a8"/><stop offset="1" stop-color="#0b5566"/></linearGradient>
+  <linearGradient id="fade1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a0614" stop-opacity="0"/><stop offset="1" stop-color="#3a0614" stop-opacity="1"/></linearGradient>
+
+  <g id="m-core">
+    <path d="M13 62h6v23h-6zM21 62h6v23h-6z" fill="#f4e4bf"/>
+    <path d="M10 87q4.5-5 9 0zM21 87q4.5-5 9 0z" fill="#c9962d"/>
+    <path d="M9 24q11-6 22 0l3 40H6z" fill="currentColor"/>
+    <path d="M20 22v20" stroke="#f6dc9a" stroke-width="1.4"/>
+    <path d="M6 62h28v3H6z" fill="#000" fill-opacity=".18"/>
+    <rect x="17" y="17" width="6" height="8" fill="#e0a77c"/>
+    <circle cx="20" cy="11" r="8.5" fill="#e0a77c"/>
+    <path d="M11.3 10c-.5-9 17.7-9 17.4 0c-4-3.5-13.4-3.5-17.4 0z" fill="#241210"/>
+    <circle cx="16.8" cy="12" r=".9" fill="#241210"/><circle cx="23.2" cy="12" r=".9" fill="#241210"/>
+    <path d="M17.6 15.2q2.4 2 4.8 0" stroke="#7a2a1a" stroke-width="1" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="w-core">
+    <path d="M9 24q11-6 22 0l7 63H2z" fill="currentColor"/>
+    <path d="M2 87h36l-.8-6H2.8z" fill="#f6dc9a"/>
+    <path d="M9 24q11-6 22 0l-5 32-16-3z" fill="#f6dc9a" fill-opacity=".38"/>
+    <rect x="17" y="17" width="6" height="8" fill="#e0a77c"/>
+    <circle cx="20" cy="11" r="8.5" fill="#e0a77c"/>
+    <path d="M11 11c-1.5-10 19.5-10 18 0c-4-4.5-14-4.5-18 0z" fill="#241210"/>
+    <circle cx="20" cy="1.8" r="4.2" fill="#241210"/>
+    <circle cx="20" cy="7.4" r=".9" fill="#c0261b"/>
+    <circle cx="16.8" cy="12.2" r=".9" fill="#241210"/><circle cx="23.2" cy="12.2" r=".9" fill="#241210"/>
+    <path d="M17.6 15.4q2.4 2 4.8 0" stroke="#7a2a1a" stroke-width="1" fill="none" stroke-linecap="round"/>
+  </g>
+  <symbol id="man" viewBox="-6 -4 52 94">
+    <use href="#m-core"/>
+    <path d="M8 27l-4 24h6l3-22zM32 27l4 24h-6l-3-22z" fill="currentColor"/>
+    <circle cx="7" cy="52" r="3.4" fill="#e0a77c"/><circle cx="33" cy="52" r="3.4" fill="#e0a77c"/>
+  </symbol>
+  <symbol id="manup" viewBox="-6 -4 52 94">
+    <use href="#m-core"/>
+    <path d="M10 28L-1 8M30 28L41 8" stroke="currentColor" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <circle cx="-1.5" cy="6" r="3.4" fill="#e0a77c"/><circle cx="41.5" cy="6" r="3.4" fill="#e0a77c"/>
+  </symbol>
+  <symbol id="woman" viewBox="-6 -4 52 94">
+    <use href="#w-core"/>
+    <path d="M10 27L5 54M30 27l5 27" stroke="#e0a77c" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+  </symbol>
+  <symbol id="womanup" viewBox="-6 -4 52 94">
+    <use href="#w-core"/>
+    <path d="M11 27L-1 9M29 27L41 9" stroke="#e0a77c" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+    <circle cx="-1" cy="9" r="1.6" fill="#f6dc9a"/><circle cx="41" cy="9" r="1.6" fill="#f6dc9a"/>
+  </symbol>
+  <symbol id="mg" viewBox="0 0 40 40">
+    <g transform="translate(20 20)">
+      <g fill="#f59e0b">
+        <ellipse cy="-10" rx="5.8" ry="9.5"/>
+        <ellipse cy="-10" rx="5.8" ry="9.5" transform="rotate(45)"/>
+        <ellipse cy="-10" rx="5.8" ry="9.5" transform="rotate(90)"/>
+        <ellipse cy="-10" rx="5.8" ry="9.5" transform="rotate(135)"/>
+        <ellipse cy="-10" rx="5.8" ry="9.5" transform="rotate(180)"/>
+        <ellipse cy="-10" rx="5.8" ry="9.5" transform="rotate(225)"/>
+        <ellipse cy="-10" rx="5.8" ry="9.5" transform="rotate(270)"/>
+        <ellipse cy="-10" rx="5.8" ry="9.5" transform="rotate(315)"/>
+      </g>
+      <g fill="#ffc83a">
+        <ellipse cy="-6.5" rx="4.2" ry="7" transform="rotate(22.5)"/>
+        <ellipse cy="-6.5" rx="4.2" ry="7" transform="rotate(67.5)"/>
+        <ellipse cy="-6.5" rx="4.2" ry="7" transform="rotate(112.5)"/>
+        <ellipse cy="-6.5" rx="4.2" ry="7" transform="rotate(157.5)"/>
+        <ellipse cy="-6.5" rx="4.2" ry="7" transform="rotate(202.5)"/>
+        <ellipse cy="-6.5" rx="4.2" ry="7" transform="rotate(247.5)"/>
+        <ellipse cy="-6.5" rx="4.2" ry="7" transform="rotate(292.5)"/>
+        <ellipse cy="-6.5" rx="4.2" ry="7" transform="rotate(337.5)"/>
+      </g>
+      <circle r="4.6" fill="#e06b00"/>
+    </g>
+  </symbol>
+  <symbol id="dy" viewBox="0 0 40 34">
+    <circle cx="20" cy="14" r="16" fill="#ffb347" fill-opacity=".28"/>
+    <path d="M20 2c4 6 6 9 0 14c-6-5-4-8 0-14z" fill="#ffb02e"/>
+    <path d="M20 8c2 3 3 4 0 6c-3-2-2-3 0-6z" fill="#fff1b0"/>
+    <path d="M3 20q17-6 34 0q-3 12-17 13q-14-1-17-13z" fill="#e9b948"/>
+  </symbol>
+  <symbol id="burst" viewBox="-30 -30 60 60">
+    <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none">
+      <path d="M0-9V-26"/><path d="M0-9V-26" transform="rotate(30)"/><path d="M0-9V-26" transform="rotate(60)"/>
+      <path d="M0-9V-26" transform="rotate(90)"/><path d="M0-9V-26" transform="rotate(120)"/><path d="M0-9V-26" transform="rotate(150)"/>
+      <path d="M0-9V-26" transform="rotate(180)"/><path d="M0-9V-26" transform="rotate(210)"/><path d="M0-9V-26" transform="rotate(240)"/>
+      <path d="M0-9V-26" transform="rotate(270)"/><path d="M0-9V-26" transform="rotate(300)"/><path d="M0-9V-26" transform="rotate(330)"/>
+      <path d="M0-6V-14" transform="rotate(15)"/><path d="M0-6V-14" transform="rotate(75)"/><path d="M0-6V-14" transform="rotate(135)"/>
+      <path d="M0-6V-14" transform="rotate(195)"/><path d="M0-6V-14" transform="rotate(255)"/><path d="M0-6V-14" transform="rotate(315)"/>
+    </g>
+    <circle r="3" fill="currentColor"/>
+  </symbol>
+  <symbol id="bottle" viewBox="0 0 14 40">
+    <rect x="4.5" y="0" width="5" height="12" rx="1.5" fill="currentColor"/>
+    <rect x="1" y="11" width="12" height="29" rx="3" fill="currentColor"/>
+    <rect x="2.5" y="20" width="9" height="12" rx="1" fill="#f4e4bf" fill-opacity=".85"/>
+  </symbol>
+  <symbol id="glass" viewBox="0 0 14 18">
+    <path d="M1 1h12l-2 15H3z" fill="#fff" fill-opacity=".3" stroke="#fff" stroke-opacity=".8"/>
+    <path d="M2 7h10l-1.2 9H3.2z" fill="currentColor"/>
+  </symbol>
+  <symbol id="pc" viewBox="0 0 20 28">
+    <rect x=".5" y=".5" width="19" height="27" rx="2.5" fill="#fff8e6" stroke="#c9962d"/>
+    <path d="M10 20c-5-3-6-7-3-8.5c1.5-.7 3 0 3 1.8c0-1.8 1.5-2.5 3-1.8c3 1.5 2 5.5-3 8.5z" fill="#c0261b"/>
+  </symbol>
+  <symbol id="chip" viewBox="0 0 18 18">
+    <circle cx="9" cy="9" r="8" fill="currentColor"/>
+    <circle cx="9" cy="9" r="5.2" fill="none" stroke="#fff" stroke-width="1.4" stroke-dasharray="2 2"/>
+  </symbol>
+</defs></svg>
+
+<template id="diya-tpl">
+  <svg class="diya" viewBox="0 0 100 90" aria-hidden="true" focusable="false">
+    <ellipse class="glow" cx="50" cy="34" rx="46" ry="34" fill="url(#g-glow)"/>
+    <g class="flame">
+      <path d="M50 4C61 19 67 30 50 47C33 30 39 19 50 4Z" fill="url(#g-flame)"/>
+      <path d="M50 25C55 32 56 37 50 44C44 37 45 32 50 25Z" fill="#fff4c9"/>
+    </g>
+    <rect x="48.5" y="44" width="3" height="9" rx="1.5" fill="#5a2a10"/>
+    <path d="M5 53Q50 45 95 53Q91 83 50 87Q9 83 5 53Z" fill="url(#g-bowl)"/>
+    <path d="M5 53Q50 61 95 53" fill="none" stroke="#fff1bd" stroke-opacity=".65" stroke-width="2"/>
+    <g fill="#7a4d0e" fill-opacity=".55"><circle cx="30" cy="70" r="2.4"/><circle cx="50" cy="75" r="2.4"/><circle cx="70" cy="70" r="2.4"/></g>
+  </svg>
+</template>
+
+<div class="wrap">
+
+  <header class="hero">
+    <canvas id="fx" aria-hidden="true"></canvas>
+
+    <svg class="garland" viewBox="0 0 360 52" aria-hidden="true" focusable="false">
+      <path d="M0 4Q180 64 360 4" fill="none" stroke="#e9b948" stroke-width="1.5"/>
+      <use href="#mg" x="2" y="-1" width="26" height="26"/>
+      <use href="#mg" x="42" y="8" width="26" height="26"/>
+      <use href="#mg" x="82" y="15" width="26" height="26"/>
+      <use href="#mg" x="122" y="19" width="26" height="26"/>
+      <use href="#mg" x="167" y="21" width="26" height="26"/>
+      <use href="#mg" x="212" y="19" width="26" height="26"/>
+      <use href="#mg" x="252" y="15" width="26" height="26"/>
+      <use href="#mg" x="292" y="8" width="26" height="26"/>
+      <use href="#mg" x="332" y="-1" width="26" height="26"/>
+    </svg>
+
+    <span class="eyebrow">Diwali after dark</span>
+    <p class="shayari">🌸 Phool hum sajaayenge, pool tum hilaana, patakhe toh tum waise bhi ho—bas time pe aa jaana! 💥😂</p>
+
+    <h1>
+      <span class="iss">Iss Diwali,</span>
+      <span class="big-words"><span>PHOOL,</span><span>POOL</span><span>&amp; PATakhas</span></span>
+      <span class="manao">manao.</span>
+    </h1>
+
+    <p class="shayari">Dost hain apne, koi judge nahi karega,<br>Bas tera dance dekh ke agle din meme zaroor banega! 📸🤣</p>
+    <p class="when">Sunday, 1 Nov · 7 pm onwards</p>
+
+    <svg class="strip" viewBox="0 0 360 134" aria-hidden="true" focusable="false">
+      <use class="dnc" style="color:#e9b948;--d:0s" href="#manup" x="4" y="38" width="52" height="94"/>
+      <use class="dnc" style="color:#d6336c;--d:.25s" href="#womanup" x="72" y="38" width="52" height="94"/>
+      <use class="dnc" style="color:#1f9d8b;--d:.1s" href="#manup" x="150" y="24" width="60" height="108"/>
+      <use class="dnc" style="color:#f08a24;--d:.4s" href="#womanup" x="236" y="38" width="52" height="94"/>
+      <use class="dnc" style="color:#8e44ad;--d:.15s" href="#manup" x="304" y="38" width="52" height="94"/>
+      <use href="#mg" x="0" y="112" width="22" height="22"/><use href="#mg" x="58" y="118" width="18" height="18"/>
+      <use href="#mg" x="128" y="114" width="20" height="20"/><use href="#mg" x="214" y="116" width="20" height="20"/>
+      <use href="#mg" x="290" y="118" width="18" height="18"/><use href="#mg" x="338" y="112" width="22" height="22"/>
+      <use href="#burst" x="12" y="2" width="30" height="30" style="color:#f6dc9a"/>
+      <use href="#burst" x="318" y="2" width="30" height="30" style="color:#ff9d4a"/>
+    </svg>
+
+    <div class="lamps" aria-hidden="true">
+      <div class="lamp" style="--w:11%;--d:.2s" data-diya></div>
+      <svg class="fi" viewBox="0 0 40 40"><use href="#mg"/></svg>
+      <div class="lamp" style="--w:13%;--d:.7s" data-diya></div>
+      <svg class="fi" viewBox="0 0 40 40"><use href="#mg"/></svg>
+      <div class="lamp" style="--w:17%;--d:0s" data-diya></div>
+      <svg class="fi" viewBox="0 0 40 40"><use href="#mg"/></svg>
+      <div class="lamp" style="--w:13%;--d:.5s" data-diya></div>
+      <svg class="fi" viewBox="0 0 40 40"><use href="#mg"/></svg>
+      <div class="lamp" style="--w:11%;--d:.9s" data-diya></div>
+    </div>
+  </header>
+
+  <div id="countWrap">
+    <p class="count-head">Party shuru hone mein</p>
+    <div class="count" id="count" role="timer" aria-live="off">
+      <div class="unit"><b id="cd">--</b><span>Din</span></div>
+      <div class="unit"><b id="ch">--</b><span>Ghante</span></div>
+      <div class="unit"><b id="cm">--</b><span>Minute</span></div>
+      <div class="unit"><b id="cs">--</b><span>Second</span></div>
+    </div>
+    <p class="live" id="live" hidden>Party shuru ho chuki hai. Kahan ho tum?</p>
+  </div>
+
+  <section id="cards">
+    <span class="eyebrow">Patte kholo</span>
+    <h2>Raat ke rules, chaar cards mein</h2>
+    <div class="stack" id="stack">
+
+      <button class="card" type="button" aria-label="Card A, date and time">
+        <span class="inner">
+          <span class="face front">
+            <svg class="art" viewBox="0 0 240 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+              <rect width="240" height="250" fill="url(#sky1)"/>
+              <path d="M120 0L36 214H104z" fill="#f6dc9a" fill-opacity=".1"/>
+              <path d="M120 0L204 214H136z" fill="#ff9d4a" fill-opacity=".1"/>
+              <use href="#burst" x="6" y="22" width="80" height="80" style="color:#f6dc9a"/>
+              <use href="#burst" x="148" y="8" width="88" height="88" style="color:#ff9d4a"/>
+              <use href="#burst" x="88" y="40" width="58" height="58" style="color:#ff6b8a"/>
+              <path d="M0 8Q120 40 240 8" fill="none" stroke="#e9b948" stroke-width="1.2"/>
+              <use href="#mg" x="-1" y="0" width="22" height="22"/><use href="#mg" x="34" y="6" width="22" height="22"/>
+              <use href="#mg" x="71" y="11" width="22" height="22"/><use href="#mg" x="109" y="13" width="22" height="22"/>
+              <use href="#mg" x="147" y="11" width="22" height="22"/><use href="#mg" x="184" y="6" width="22" height="22"/>
+              <use href="#mg" x="219" y="0" width="22" height="22"/>
+              <rect y="206" width="240" height="44" fill="#2a0a14"/>
+              <path d="M0 206h240" stroke="#e9b948" stroke-width="2"/>
+              <rect x="4" y="148" width="30" height="58" rx="4" fill="#1b0610" stroke="#e9b948"/>
+              <circle cx="19" cy="166" r="7" fill="#0b0307" stroke="#f6dc9a"/><circle cx="19" cy="190" r="10" fill="#0b0307" stroke="#f6dc9a"/>
+              <rect x="206" y="148" width="30" height="58" rx="4" fill="#1b0610" stroke="#e9b948"/>
+              <circle cx="221" cy="166" r="7" fill="#0b0307" stroke="#f6dc9a"/><circle cx="221" cy="190" r="10" fill="#0b0307" stroke="#f6dc9a"/>
+              <use href="#womanup" x="22" y="112" width="52" height="94" style="color:#d6336c"/>
+              <use href="#manup" x="166" y="112" width="52" height="94" style="color:#1f9d8b"/>
+              <use href="#manup" x="94" y="104" width="52" height="94" style="color:#f08a24"/>
+              <rect x="66" y="160" width="108" height="48" rx="5" fill="#1b0610" stroke="#e9b948" stroke-width="1.5"/>
+              <circle cx="96" cy="176" r="14" fill="#0b0307" stroke="#f6dc9a"/><circle cx="96" cy="176" r="3" fill="#f6dc9a"/>
+              <circle cx="144" cy="176" r="14" fill="#0b0307" stroke="#f6dc9a"/><circle cx="144" cy="176" r="3" fill="#f6dc9a"/>
+              <rect x="112" y="168" width="16" height="22" rx="2" fill="#3a0614" stroke="#e9b948" stroke-opacity=".6"/>
+              <circle cx="116" cy="175" r="1.8" fill="#ff6b8a"/><circle cx="124" cy="175" r="1.8" fill="#1f9d8b"/><circle cx="116" cy="183" r="1.8" fill="#f6dc9a"/><circle cx="124" cy="183" r="1.8" fill="#ff9d4a"/>
+              <path d="M110.5 121a9.5 9.5 0 0 1 19 0" stroke="#111" stroke-width="2.5" fill="none"/>
+              <rect x="108" y="120" width="4" height="7" rx="2" fill="#111"/><rect x="128" y="120" width="4" height="7" rx="2" fill="#111"/>
+            </svg>
+            <span class="rank">A</span>
+            <span class="info"><span class="k">Kab</span><span class="big">Sunday, 1 Nov</span><span class="txt">7 pm onwards. DJ, naach aur dhamaka.</span></span>
+          </span>
+          <span class="face back"><span class="roundel"><span style="display:contents" data-diya="still"></span></span></span>
+        </span>
+      </button>
+
+      <button class="card" type="button" aria-label="Card K, venue">
+        <span class="inner">
+          <span class="face front">
+            <svg class="art" viewBox="0 0 240 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+              <rect width="240" height="250" fill="url(#sky1)"/>
+              <g fill="#f6dc9a"><circle cx="30" cy="20" r="1.4"/><circle cx="70" cy="44" r="1.2"/><circle cx="110" cy="14" r="1.4"/><circle cx="160" cy="48" r="1.2"/><circle cx="226" cy="60" r="1.4"/></g>
+              <circle cx="204" cy="34" r="14" fill="#f6dc9a"/>
+              <path d="M0 26L15 32L50 42L85 44L120 32L155 28L190 34L225 28L240 24" fill="none" stroke="#e9b948" stroke-opacity=".7"/>
+              <g fill="#ffd35c"><circle cx="15" cy="34" r="3.6"/><circle cx="50" cy="44" r="3.6"/><circle cx="85" cy="46" r="3.6"/><circle cx="120" cy="34" r="3.6"/><circle cx="155" cy="30" r="3.6"/><circle cx="190" cy="36" r="3.6"/><circle cx="225" cy="30" r="3.6"/></g>
+              <path d="M36 94L120 46L204 94Z" fill="#6e1127" stroke="#e9b948"/>
+              <rect x="50" y="94" width="140" height="72" fill="#3a0614" stroke="#e9b948"/>
+              <rect x="62" y="108" width="26" height="22" fill="#ffcf5c"/><rect x="152" y="108" width="26" height="22" fill="#ffcf5c"/>
+              <path d="M108 166V122a12 12 0 0 1 24 0V166Z" fill="#ffb02e"/>
+              <use href="#mg" x="40" y="86" width="18" height="18"/><use href="#mg" x="60" y="90" width="18" height="18"/><use href="#mg" x="80" y="90" width="18" height="18"/>
+              <use href="#mg" x="100" y="88" width="18" height="18"/><use href="#mg" x="122" y="88" width="18" height="18"/><use href="#mg" x="142" y="90" width="18" height="18"/>
+              <use href="#mg" x="162" y="90" width="18" height="18"/><use href="#mg" x="182" y="86" width="18" height="18"/>
+              <rect x="44" y="170" width="152" height="68" rx="20" fill="url(#poolG)" stroke="#e9b948" stroke-width="3"/>
+              <path d="M62 192q10-6 20 0t20 0t20 0" fill="none" stroke="#fff" stroke-opacity=".35"/>
+              <path d="M104 214q10-6 20 0t20 0t20 0" fill="none" stroke="#fff" stroke-opacity=".3"/>
+              <use href="#dy" x="58" y="196" width="30" height="26"/><use href="#dy" x="150" y="182" width="30" height="26"/>
+              <use href="#mg" x="100" y="190" width="20" height="20"/><use href="#mg" x="128" y="212" width="18" height="18"/><use href="#mg" x="72" y="216" width="16" height="16"/>
+              <use href="#man" x="0" y="118" width="48" height="87" style="color:#e9b948"/>
+              <use href="#woman" x="194" y="118" width="46" height="83" style="color:#d6336c"/>
+            </svg>
+            <span class="rank">K</span>
+            <span class="info"><span class="k">Kahan</span><span class="big">FARM : 1518</span><span class="txt">I Sector - 135, Noida</span></span>
+          </span>
+          <span class="face back"><span class="roundel"><span style="display:contents" data-diya="still"></span></span></span>
+        </span>
+      </button>
+
+      <button class="card" type="button" aria-label="Card Q, dress code">
+        <span class="inner">
+          <span class="face front">
+            <svg class="art" viewBox="0 0 240 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+              <defs><pattern id="mgPat" width="30" height="30" patternUnits="userSpaceOnUse"><use href="#mg" width="30" height="30"/></pattern></defs>
+              <rect width="240" height="250" fill="url(#sky1)"/>
+              <rect width="240" height="84" fill="url(#mgPat)"/>
+              <rect y="62" width="240" height="40" fill="url(#fade1)"/>
+              <use href="#burst" x="6" y="98" width="38" height="38" style="color:#f6dc9a"/>
+              <use href="#burst" x="196" y="94" width="38" height="38" style="color:#ff9d4a"/>
+              <ellipse cx="120" cy="226" rx="106" ry="20" fill="#2a0a14"/>
+              <ellipse cx="120" cy="226" rx="92" ry="16" fill="#d6336c"/>
+              <ellipse cx="120" cy="226" rx="74" ry="13" fill="#f59e0b"/>
+              <ellipse cx="120" cy="226" rx="56" ry="10" fill="#1f9d8b"/>
+              <ellipse cx="120" cy="226" rx="38" ry="7" fill="#f6dc9a"/>
+              <use href="#man" x="6" y="120" width="52" height="94" style="color:#e9b948"/>
+              <use href="#womanup" x="64" y="120" width="52" height="94" style="color:#d6336c"/>
+              <use href="#man" x="122" y="120" width="52" height="94" style="color:#1f9d8b"/>
+              <use href="#womanup" x="180" y="120" width="52" height="94" style="color:#f08a24"/>
+              <use href="#burst" x="55" y="116" width="30" height="30" style="color:#fff1b0"/>
+              <use href="#burst" x="205" y="116" width="30" height="30" style="color:#fff1b0"/>
+            </svg>
+            <span class="rank">Q</span>
+            <span class="info"><span class="k">Dress code</span><span class="big">Traditional mandatory</span><span class="txt">₹200 fine for rulebreakers, goes to the prize money.</span></span>
+          </span>
+          <span class="face back"><span class="roundel"><span style="display:contents" data-diya="still"></span></span></span>
+        </span>
+      </button>
+
+      <button class="card" type="button" aria-label="Card J, drinks and poker">
+        <span class="inner">
+          <span class="face front">
+            <svg class="art" viewBox="0 0 240 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+              <rect width="240" height="250" fill="url(#sky1)"/>
+              <path d="M0 18L20 26L60 34L100 24L140 34L180 26L220 34L240 22" fill="none" stroke="#e9b948" stroke-opacity=".7"/>
+              <g fill="#ffd35c"><circle cx="20" cy="28" r="3.6"/><circle cx="60" cy="36" r="3.6"/><circle cx="100" cy="26" r="3.6"/><circle cx="140" cy="36" r="3.6"/><circle cx="180" cy="28" r="3.6"/><circle cx="220" cy="36" r="3.6"/></g>
+              <use href="#mg" x="-4" y="40" width="24" height="24"/><use href="#mg" x="216" y="40" width="24" height="24"/>
+              <use href="#man" x="2" y="94" width="52" height="94" style="color:#e9b948"/>
+              <use href="#woman" x="64" y="94" width="52" height="94" style="color:#d6336c"/>
+              <use href="#man" x="126" y="94" width="52" height="94" style="color:#1f9d8b"/>
+              <use href="#woman" x="188" y="94" width="52" height="94" style="color:#f08a24"/>
+              <rect x="-6" y="158" width="252" height="100" rx="14" fill="#7b4a1e"/>
+              <rect x="2" y="163" width="236" height="88" rx="10" fill="#0f5a3c" stroke="#e9b948" stroke-width="2"/>
+              <use href="#pc" x="92" y="174" width="22" height="31" transform="rotate(-16 103 190)"/>
+              <use href="#pc" x="108" y="172" width="22" height="31"/>
+              <use href="#pc" x="124" y="174" width="22" height="31" transform="rotate(16 135 190)"/>
+              <use href="#chip" x="30" y="206" width="18" height="18" style="color:#c0261b"/>
+              <use href="#chip" x="34" y="200" width="18" height="18" style="color:#1f6fd1"/>
+              <use href="#chip" x="188" y="208" width="18" height="18" style="color:#f6dc9a"/>
+              <use href="#chip" x="192" y="202" width="18" height="18" style="color:#c0261b"/>
+              <use href="#bottle" x="12" y="168" width="14" height="40" style="color:#b9722a"/>
+              <use href="#bottle" x="214" y="168" width="14" height="40" style="color:#2e7d32"/>
+              <use href="#glass" x="64" y="196" width="14" height="18" style="color:#ffb02e"/>
+              <use href="#glass" x="166" y="196" width="14" height="18" style="color:#ff6b8a"/>
+              <use href="#dy" x="68" y="218" width="30" height="26"/><use href="#dy" x="142" y="218" width="30" height="26"/>
+            </svg>
+            <span class="rank">J</span>
+            <span class="info"><span class="k">Daaru &amp; drinks</span><span class="big">BYOB</span><span class="txt">Alcohol apna laao. Softdrinks on us.</span></span>
+          </span>
+          <span class="face back"><span class="roundel"><span style="display:contents" data-diya="still"></span></span></span>
+        </span>
+      </button>
+    </div>
+    <p class="hint" id="deckHint"></p>
+    <button class="btn ghost" id="shuffle" type="button" hidden>Cards phir se palto</button>
+    <a class="maplink" href="https://maps.app.goo.gl/hxWqJak2k2oH3Wpe7" target="_blank" rel="noopener">FARM : 1518, Sector 135 Noida, Google Maps pe kholo</a>
+  </section>
+
+  <section id="rules">
+    <h2>⚖️ PHOOL, POOL &amp; PATAKHAS 🌸💦</h2>
+    <p class="lede" style="font-weight:700;color:var(--gold-300)">🚨 TODA RULE, TOH LAGEGA FINE! 💸</p>
+    <ul class="fines">
+      <li class="fine"><span class="amt">₹200</span><b>👗 Traditional nahi pehna toh ₹200</b><span>Rulebreaker ka fine seedha prize money mein jaayega.</span></li>
+      <li class="fine"><span class="amt">₹500</span><b>🤮 Ulti ki toh ₹500 ka fatka</b><span>Daaru nahi sambhali toh jeb sambhaal! 😂</span></li>
+      <li class="fine"><span class="amt">₹1,000</span><b>🪑 Property damage pe ₹1,000 ka tamaacha</b><span>Baap ka farmhouse samajh rakha hai kya, Ambani ke naati? 💀</span></li>
+      <li class="fine"><span class="amt">₹1,500</span><b>🏊 Pool ganda kiya toh ₹1,500 ka jhatka</b><span>Pool hai bhai, teri kidney ka washing machine nahi! 🤢</span></li>
+      <li class="fine"><span class="amt">₹300</span><b>🧹 Gandagi failayi toh ₹300 ki dhulai</b><span>Paisa de ya jhaadu pakad, choice teri! 🧹</span></li>
+      <li class="fine"><span class="amt out">VIDAAI</span><b>🚫 Pool mein dhakka-mukki ki toh direct vidaai</b><span>Titanic banana hai toh apne ghar ja! 🛟</span></li>
+    </ul>
+  </section>
+
+  <section id="rsvp">
+    <span class="eyebrow">RSVP</span>
+    <h2>Apni entry darj karo</h2>
+    <p class="lede">Naam, "coming na?" aur (haan bola toh) khaane aur daaru ka scene bharna zaroori hai. Baaki sab optional.</p>
+
+    <form id="form" autocomplete="off" novalidate>
+      <label class="fl" for="name">1. Naam <small>(zaroori)</small></label>
+      <input type="text" id="name" name="name" placeholder="Tumhara naam" maxlength="60" autocomplete="name">
+
+      <div class="fl" id="comingLbl">2. Coming na? <small>(zaroori)</small></div>
+      <div id="coming" role="radiogroup" aria-labelledby="comingLbl"></div>
+
+      <div id="partyDetails" hidden>
+        <div class="fl" id="dietLbl">3. Khaane mein kya? <small>(zaroori)</small></div>
+        <div class="group two" id="diet" role="radiogroup" aria-labelledby="dietLbl"></div>
+
+        <div class="fl" id="byobLbl">4. Daaru ka scene? BYOB hai <small>(zaroori)</small></div>
+        <div class="group" id="byob" role="radiogroup" aria-labelledby="byobLbl"></div>
+
+        <div id="drinksWrap" hidden>
+          <label class="fl" for="drinks">Kon konsi darru laaoge? <small>(zaroori)</small></label>
+          <input type="text" id="drinks" name="drinks" placeholder="Jaise: Old Monk, Kingfisher, Smirnoff" maxlength="120">
+        </div>
+      </div>
+
+      <div id="jobs">
+        <div class="title-box">
+          <h3>🚨 PHOOL, POOL &amp; PATakhas: JOB ALLOCATION 🚨</h3>
+          <p>Host akela kitna kaam karega bhai? 😂<br>Apni duty pick karo — baad mein "mujhe pata nahi tha" waale bahane nahi chalenge. 🔥<br>Pick your role. Own your bakchodi. 🥂</p>
+        </div>
+        <div class="group roles" id="roles" role="radiogroup" aria-label="Job allocation" style="margin-top:14px"></div>
+      </div>
+      <p class="nojobs" id="noJobs" hidden>Nahi aa rahe toh duty bhi nahi. Lucky ho tum.</p>
+
+      <div class="title-box">
+        <h3>🪔 PHOOL, POOL &amp; PATakhas 🔥</h3>
+        <p><b>One Night. Zero Sanskaar. Unlimited Yaadein.</b><br>Welcome, party animals! 🐒<br>Attendance laga rahe ho ya dosti ka antim sanskar? 😂 Form honestly bharna, waise bhi tumhari harkatein sabko pata hain.</p>
+        <p class="note" style="text-align:left">Sach-sach form, optional.</p>
+      </div>
+      <div id="quiz"></div>
+
+      <div class="decl">
+        <b class="dt">🥂 FINAL DECLARATION</b>
+        <p>Main, neeche sign karne wala mahaan namoona, yeh maanta/maanti hoon ki party mein apni marzi se aa raha/rahi hoon. Baad mein boring bolne, photos delete karwane aur contribution se bachne ki koshish nahi karunga/karungi. 😂</p>
+      </div>
+
+      <div class="decl" style="margin-top:16px">
+        <b class="dt">✍️ DECLARATION OF BAKCHODI</b>
+        <p>Rules padh liye, dimaag mein daal liye. Ab galti ki toh rona mat—jeb se bharna, WhatsApp group mein nahi! 🤡💸</p>
+        <div class="sigrow"><span class="sl">Naam:</span><span class="sv" id="sigName">_____________</span></div>
+        <div class="sigrow"><label class="sl" for="sig">Signature:</label><input type="text" class="sigin" id="sig" name="sig" placeholder="Yahan sign karo" maxlength="40"></div>
+      </div>
+
+      <a id="send" class="btn" role="button" tabindex="0" aria-disabled="true">RSVP on WhatsApp</a>
+      <p class="note" id="sendHint">Naam aur "coming na?" bharo, tab button chalega.</p>
+    </form>
+  </section>
+
+  <section id="result" hidden>
+    <span class="eyebrow">Tumhara pass</span>
+    <h2>Screenshot lo, story pe daalo</h2>
+    <div class="pass" id="pass">
+      <span class="eyebrow" id="pStatus">Entry pakki</span>
+      <div class="lampTop" data-diya></div>
+      <p class="pname" id="pName"></p>
+      <p class="prole" id="pRole"></p>
+      <p class="pvibe" id="pVibe"></p>
+      <p class="pextra" id="pExtra"></p>
+      <p class="pmeta">Iss Diwali, PHOOL, POOL &amp; PATakhas<br>Sunday, 1 Nov · 7 pm onwards<br>FARM : 1518 I Sector - 135 Noida</p>
+    </div>
+    <p class="note">WhatsApp nahi khula? Message yahan se copy karke bhej do.</p>
+    <textarea class="cp" id="msgBox" rows="8" readonly aria-label="RSVP message"></textarea>
+    <button class="btn ghost" id="copy" type="button">Message copy karo</button>
+    <p class="note" id="copyNote" aria-live="polite"></p>
+  </section>
+
+  <footer>
+    <b>Diwali after dark</b>
+    No boring people. No dry vibes. Only our kind of chaos.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Diya placeholders */
+  var tpl=$('#diya-tpl');
+  document.querySelectorAll('[data-diya]').forEach(function(el){
+    var n=tpl.content.firstElementChild.cloneNode(true);
+    (el.getAttribute('data-diya')||'').split(' ').forEach(function(c){ if(c){ if(c==='still'){el.classList.add('still')} else {n.classList.add(c)} } });
+    el.appendChild(n);
+  });
+
+  /* Countdown to Sunday 1 Nov 2026, 7 pm IST */
+  var T=new Date('2026-11-01T19:00:00+05:30').getTime();
+  var pad=function(n){return n<10?'0'+n:''+n};
+  function tick(){
+    var d=T-Date.now();
+    if(d<=0){ $('#count').hidden=true; $('.count-head').hidden=true; $('#live').hidden=false; return false; }
+    var s=Math.floor(d/1000);
+    $('#cd').textContent=Math.floor(s/86400);
+    $('#ch').textContent=pad(Math.floor(s%86400/3600));
+    $('#cm').textContent=pad(Math.floor(s%3600/60));
+    $('#cs').textContent=pad(s%60);
+    return true;
+  }
+  if(tick()){ var iv=setInterval(function(){ if(!tick()) clearInterval(iv); },1000); }
+
+  /* Card stack: tap the top card, it flies away and the next flips up */
+  var stack=$('#stack'), cards=[].slice.call(stack.querySelectorAll('.card')), order=cards.slice();
+  var shuf=$('#shuffle'), hintEl=$('#deckHint');
+  function layout(){
+    order.forEach(function(c,i){
+      c.style.setProperty('--z',20-i);
+      c.style.setProperty('--r',(i===0?0:(i%2?3:-3)*Math.min(i,2))+'deg');
+      c.style.setProperty('--ty',(Math.min(i,3)*7)+'px');
+      c.classList.toggle('is-back',i>0);
+      c.classList.toggle('top',i===0);
+      c.tabIndex=i===0?0:-1;
+      c.setAttribute('aria-hidden',i===0?'false':'true');
+    });
+    if(order.length){
+      hintEl.textContent='Card pe tap karo, agla khulega ('+(cards.length-order.length+1)+'/'+cards.length+')';
+      shuf.hidden=true;
+    } else {
+      hintEl.textContent='Saare cards khatam. Ab RSVP karo.';
+      shuf.hidden=false;
+    }
+  }
+  cards.forEach(function(c){
+    c.addEventListener('click',function(){
+      if(order[0]!==c) return;
+      var dir=Math.random()<.5?-1:1;
+      c.style.setProperty('--gx',(dir*125)+'%');
+      c.style.setProperty('--gr',(dir*(14+Math.random()*14))+'deg');
+      c.classList.add('gone'); c.classList.remove('top'); c.tabIndex=-1;
+      order.shift();
+      setTimeout(layout,120);
+    });
+  });
+  shuf.addEventListener('click',function(){
+    cards.forEach(function(c){ c.classList.remove('gone'); });
+    order=cards.slice();
+    layout();
+  });
+  layout();
+
+  /* Fireworks (light: few particles, paused when hidden) */
+  var cv=$('#fx');
+  if(cv && !reduce && cv.getContext){
+    var ctx=cv.getContext('2d'),W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,1.5);
+    var size=function(){ var r=cv.getBoundingClientRect(); W=r.width; H=r.height; cv.width=Math.max(1,W*dpr); cv.height=Math.max(1,H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); };
+    size(); window.addEventListener('resize',size);
+    var cols=['#f6dc9a','#e9b948','#ff9d4a','#ffd9a0','#ff6b5a'];
+    var ps=[],last=0,next=0,running=false,raf=0,inView=true;
+    var burst=function(){
+      var x=W*(.1+Math.random()*.8), y=H*(.08+Math.random()*.42), c=cols[(Math.random()*cols.length)|0], n=26;
+      for(var i=0;i<n;i++){ var a=i/n*6.283+Math.random()*.25, s=1+Math.random()*1.7; ps.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c:c}); }
+    };
+    var frame=function(t){
+      if(!running) return;
+      raf=requestAnimationFrame(frame);
+      var dt=Math.min(32,t-last)/16.7; last=t;
+      if(t>next){ burst(); next=t+1000+Math.random()*900; }
+      ctx.globalCompositeOperation='destination-out';
+      ctx.fillStyle='rgba(0,0,0,.22)'; ctx.fillRect(0,0,W,H);
+      ctx.globalCompositeOperation='source-over';
+      for(var i=ps.length-1;i>=0;i--){
+        var p=ps[i];
+        p.x+=p.vx*dt; p.y+=p.vy*dt; p.vy+=.035*dt; p.vx*=.986; p.vy*=.99; p.l-=.015*dt;
+        if(p.l<=0){ ps.splice(i,1); continue; }
+        ctx.globalAlpha=p.l; ctx.fillStyle=p.c; ctx.fillRect(p.x,p.y,2.2,2.2);
+      }
+      ctx.globalAlpha=1;
+    };
+    var start=function(){ if(running||!inView||document.hidden) return; running=true; last=performance.now(); raf=requestAnimationFrame(frame); };
+    var stop=function(){ running=false; cancelAnimationFrame(raf); };
+    document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ inView=es[0].isIntersecting; inView?start():stop(); }).observe(cv.parentNode);
+    }
+    start();
+  }
+
+  /* RSVP data */
+  var COMING=[
+    {id:'y1',yes:true, t:'🥂 Aaj sanskaaron ki chhutti hai, 🐐 Party ka asli baap aa raha hai'},
+    {id:'y2',yes:true, t:'🕺 Main mahaul banane aa raha hoon, 💸 EMI baad mein, party pehle'},
+    {id:'n1',yes:false,t:'💀 Main doston ke naam pe kalank hoon, 🤡 Main janam se hi boring hoon'},
+    {id:'n2',yes:false,t:'🐸 Main certified namoona hoon, 🔐🏠 Meri zindagi mummy ke control mein hai'}
+  ];
+  var ROLES=[
+    {id:'dj',e:'🎧',n:'DJ Saab',d:'Playlist in-charge. Bad songs pe public ka judgement bhi jhelega.'},
+    {id:'decor',e:'🌸',n:'Decor Paglu',d:'Diyas, flowers, lights — farmhouse ko shaadi ka venue bana dega.'},
+    {id:'chakhna',e:'🍕',n:'Chakhna Champion',d:'Snacks laayega aur aadhe raste mein khud hi kha jaayega.'},
+    {id:'mocktail',e:'🍹',n:'Mocktail Maharaj',d:'Drinks mix karega, naam rakhega aur khud review bhi dega.'},
+    {id:'gm',e:'🎯',n:'Game Master',d:'Games karwaayega aur haarne waalon ke bahane sunega.'},
+    {id:'papa',e:'📸',n:'Paparazzi',d:'Sabki photos lega, khaaskar woh jo koi post nahi karna chahta.'},
+    {id:'hype',e:'📢',n:'Hype Machine',d:'Sabko dance floor pe laayega, khud corner mein khada rahega.'},
+    {id:'chef',e:'🍜',n:'Chef Gappu',d:'Food ka zimma lega, par cooking se zyada tasting karega.'},
+    {id:'safai',e:'🧹',n:'Safai Minister',d:'Party ke baad sabko gayab paayega, kachra khud uthayega.'},
+    {id:'late',e:'⏰',n:'Late Latif',d:'Sabse pehle bolega "on the way", sabse last mein pahunchega.'},
+    {id:'cid',e:'🕵️',n:'CID Officer',d:'Kaun kahan hai, kisne kya kiya — poori investigation.'},
+    {id:'budget',e:'💸',n:'Budget Minister',d:'Har kharche ka hisaab maangega, payment ke time offline.'},
+    {id:'rithik',e:'🕺',n:'Rain Dance Rithik',d:'Dance steps zero, confidence hundred.'},
+    {id:'pool',e:'🏊‍♂️',n:'Pool Patrol',d:'Poolside safety ka in-charge — lifeguard vibes, dost wali salary.'},
+    {id:'rj',e:'🎤',n:'Bina Maange RJ',d:'Mic milte hi podcast shuru, audience bhaagti rahegi.'},
+    {id:'ghost',e:'👻',n:'Disappearing Legend',d:'Entry grand, duty zero, exit bina bataye.'}
+  ];
+  var DIET=[{id:'veg',t:'🥦 Veg'},{id:'nonveg',t:'🍗 Non-veg'}];
+  var BYOB=[
+    {id:'yes',t:'🍾 Haan, main apni daaru laa raha hoon'},
+    {id:'no',t:'🥤 Main softdrinks pe hi guzara kar lunga'}
+  ];
+  var QS=[
+    {s:'Attendance',q:'1. Attendance laga rahe ho ya dosti ka antim sanskar? 😂',o:['🔥 Aa raha hoon, mahaul bana denge','😈 Meri entry se party shuru','💸 Dil se haan, budget se naa','🤡 Main janam se boring hoon']},
+    {s:'Ghar pe bahana',q:'2. Ghar pe kya bahana maar ke aaoge? 🏠',o:['📚 Group study hai, mummy','🙏 Dost ka emotional breakdown hai','🧑‍💻 Office ka urgent kaam hai','🗿 Sach bolunga, phir ghar pe hi milunga']},
+    {s:'Party motive',q:'3. Party mein tumhara asli motive kya hai? 👀',o:['🕺 Rain dance mein aag lagani hai','🍕 Buffet ka safaya karna hai','📸 DP aur stories update karni hain','💘 Kisi special insaan ka intezaar hai','😴 Free farmhouse, free mein aish']},
+    {s:'Party character',q:'4. Tumhara party character kaunsa hai? 🎭',o:['🎧 DJ Saab','🍗 Chakhna Champion','📸 Paparazzi','🫥 Disappearing Legend','💸 Budget Minister','🕺 Rain Dance Rithik','🕵️ Gossip CID']},
+    {s:'DJ ne gaana nahi bajaya',q:'5. DJ ne tumhara favourite gaana nahi bajaya. Ab? 🎧',o:['🎤 DJ ko resignation dilwaunga','💃 Khud dance karke prove karunga','😤 Playlist committee banaunga','🗿 Chupchaap judge karunga']},
+    {s:'Pool role',q:'6. Pool mein tumhara role kya hoga? 🏊',o:['🐟 Main machhli ka avatar hoon','🛟 Poolside commentator','📸 Sirf aesthetic photos','🩴 Pair daalke Olympic swimmer banunga','🚫 Main dry land ka sher hoon']},
+    {s:'Raat 3 baje',q:'7. Raat ke 3 baje tum kahan miloge? 🌚',o:['🕺 Dance floor pe abhi bhi zinda','🍕 Kitchen mein raid maarte hue','🛋️ Sofa pe system shutdown','🫥 Location unavailable','🎤 Sabko life advice dete hue']},
+    {s:'Party ke baad dialogue',q:'8. Party ke baad sabse likely dialogue? 😂',o:['😭 Bhai photos bhej dena','📱 Kal story daalunga, abhi nahi','💸 Splitwise mein add mat karna','🥹 Next party kab hai?','🤐 Jo hua, farmhouse tak hi rahe']},
+    {s:'Social battery',q:'9. Apni social battery ko rate karo. 🔋',o:['🔋 100% — sunrise tak ready','⚡ 70% — DJ pe depend karta hai','🪫 20% — snacks se recharge hoga','🪦 Already dead, bas body aayegi']},
+    {s:'Award',q:'10. Agar tumhe ek award mile toh kaunsa? 🏆',o:['🎭 Most Dramatic Entry','🍗 Best Food Investigation','🫥 Best Disappearance','📸 Most Likely to Say “Ek Aur Photo”','🗣️ Best Unsolicited Advice','💸 Most Likely to Forget Payment']}
+  ];
+
+  var radio=function(name,id,value,inner,cls){
+    return '<label class="opt '+(cls||'')+'"><input type="radio" name="'+name+'" id="'+id+'" value="'+value+'"><span class="box">'+inner+'</span></label>';
+  };
+  var cHtml='<p class="sub">Haan, aa raha hoon</p><div class="group">';
+  COMING.filter(function(c){return c.yes}).forEach(function(c){ cHtml+=radio('coming','c-'+c.id,c.id,c.t); });
+  cHtml+='</div><p class="sub">Naa, nahi aa paunga</p><div class="group">';
+  COMING.filter(function(c){return !c.yes}).forEach(function(c){ cHtml+=radio('coming','c-'+c.id,c.id,c.t); });
+  cHtml+='</div>';
+  $('#coming').innerHTML=cHtml;
+
+  $('#diet').innerHTML=DIET.map(function(d){ return radio('diet','d-'+d.id,d.id,d.t); }).join('');
+  $('#byob').innerHTML=BYOB.map(function(d){ return radio('byob','b-'+d.id,d.id,d.t); }).join('');
+
+  $('#roles').innerHTML=ROLES.map(function(r){ return radio('role','r-'+r.id,r.id,'<b>'+r.e+' '+r.n+'</b><small>'+r.d+'</small>'); }).join('');
+
+  $('#quiz').innerHTML=QS.map(function(q,i){
+    return '<div class="q" role="radiogroup" aria-label="'+q.s+'"><h3>'+q.q+'</h3><div class="chips">'+
+      q.o.map(function(o,j){ return radio('q'+i,'q'+i+'-'+j,j,o,'chip'); }).join('')+'</div></div>';
+  }).join('');
+
+  /* Form logic */
+  var form=$('#form'), send=$('#send'), hint=$('#sendHint');
+  var WA='919958877746';
+  var state={};
+  function pick(list,id){ return list.filter(function(x){return x.id===id})[0]||null; }
+  function read(){
+    var name=$('#name').value.replace(/\s+/g,' ').trim();
+    var c=pick(COMING,form.elements['coming'].value);
+    var yes=!!(c&&c.yes);
+    var role=yes?pick(ROLES,form.elements['role'].value):null;
+    var diet=yes?pick(DIET,form.elements['diet'].value):null;
+    var byob=yes?pick(BYOB,form.elements['byob'].value):null;
+    var drinks=(yes&&byob&&byob.id==='yes')?$('#drinks').value.replace(/\s+/g,' ').trim():'';
+    var sig=$('#sig').value.replace(/\s+/g,' ').trim();
+    var ans=[];
+    QS.forEach(function(q,i){ var v=form.elements['q'+i].value; if(v!=='') ans.push({s:q.s,a:q.o[+v]}); });
+    var miss=[];
+    if(!name) miss.push('naam');
+    if(!c) miss.push('"coming na?"');
+    else if(yes){
+      if(!diet) miss.push('veg/non-veg');
+      if(!byob) miss.push('BYOB wala sawaal');
+      else if(byob.id==='yes'&&!drinks) miss.push('darru ki list');
+    }
+    return {name:name,c:c,yes:yes,role:role,diet:diet,byob:byob,drinks:drinks,sig:sig,ans:ans,miss:miss};
+  }
+  function message(s){
+    var L=['🪔 *Iss Diwali, PHOOL, POOL & PATakhas manao* — RSVP','','*Naam:* '+s.name,'*Coming na?* '+(s.yes?'YES ✅':'NO ❌')+' — '+s.c.t];
+    if(s.yes){
+      L.push('*Khaana:* '+s.diet.t);
+      L.push('*Daaru:* '+(s.byob.id==='yes'?'Main laa raha hoon — '+s.drinks:'Softdrinks pe guzara'));
+    }
+    if(s.role) L.push('*Duty:* '+s.role.e+' '+s.role.n);
+    if(s.ans.length){ L.push('','*Sach-sach form:*'); s.ans.forEach(function(x){ L.push('• '+x.s+': '+x.a); }); }
+    L.push('','✍️ Declaration of Bakchodi: padh liya'+(s.sig?' — Signed: '+s.sig:''));
+    L.push('','Sunday, 1 Nov · 7 pm onwards · FARM');
+    return L.join('\n');
+  }
+  function refresh(){
+    var s=read(); state=s;
+    var no=!!(s.c&&!s.c.yes);
+    $('#partyDetails').hidden=!s.yes;
+    $('#drinksWrap').hidden=!(s.yes&&s.byob&&s.byob.id==='yes');
+    $('#jobs').hidden=no;
+    $('#noJobs').hidden=!no;
+    $('#sigName').textContent=s.name||'_____________';
+    if(!s.miss.length){
+      var msg=message(s);
+      send.setAttribute('href','https://wa.me/'+WA+'?text='+encodeURIComponent(msg));
+      send.setAttribute('target','_blank');
+      send.setAttribute('rel','noopener');
+      send.setAttribute('aria-disabled','false');
+      send.removeAttribute('tabindex');
+      hint.textContent='WhatsApp khulega, tumhare jawab already likhe hue.';
+      $('#msgBox').value=msg;
+    } else {
+      send.removeAttribute('href'); send.removeAttribute('target'); send.removeAttribute('rel');
+      send.setAttribute('aria-disabled','true'); send.setAttribute('tabindex','0');
+      hint.textContent='Abhi baaki hai: '+s.miss.join(', ')+'.';
+    }
+  }
+  form.addEventListener('input',refresh);
+  form.addEventListener('change',refresh);
+  form.addEventListener('submit',function(e){ e.preventDefault(); });
+  [].forEach.call(form.querySelectorAll('input[type=text]'),function(i){ i.addEventListener('keydown',function(e){ if(e.key==='Enter') e.preventDefault(); }); });
+
+  send.addEventListener('click',function(e){
+    if(send.getAttribute('aria-disabled')==='true'||!send.getAttribute('href')){ e.preventDefault(); return; }
+    var s=state;
+    $('#pName').textContent=s.name;
+    $('#pStatus').textContent=s.yes?'Entry pakki':'Gair-haazir';
+    var roleEl=$('#pRole');
+    if(s.yes){
+      roleEl.innerHTML='';
+      var b=document.createElement('span'); b.textContent=s.role?(s.role.e+' '+s.role.n):'Bina role ka mehmaan';
+      roleEl.appendChild(b);
+      if(s.role){ var sm=document.createElement('small'); sm.textContent=s.role.d; roleEl.appendChild(sm); }
+      $('#pExtra').textContent=s.diet.t+' · '+(s.byob.id==='yes'?'🍾 '+s.drinks:'🥤 Softdrinks wala');
+    } else {
+      roleEl.textContent='Duty se permanent chhutti';
+      $('#pExtra').textContent='';
+    }
+    $('#pVibe').textContent=s.c.t;
+    $('#result').hidden=false;
+    setTimeout(function(){ $('#result').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}); },250);
+  });
+
+  $('#copy').addEventListener('click',function(){
+    var ta=$('#msgBox'), note=$('#copyNote');
+    var fallback=function(){ ta.focus(); ta.select(); note.textContent='Message select ho gaya, ab copy kar lo.'; };
+    try{
+      navigator.clipboard.writeText(ta.value).then(function(){ note.textContent='Copy ho gaya.'; },fallback);
+    }catch(e){ fallback(); }
+  });
+
+  refresh();
+})();
+</script>
+
+</body></html>
